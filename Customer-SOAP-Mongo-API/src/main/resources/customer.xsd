@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.customer.com/spring/soap/api/getcustomer"
+	xmlns:cus="http://www.customer.com/spring/soap/api/getcustomer"
+	elementFormDefault="qualified">
+
+	<xsd:element name="CustomerRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="customerId" type="xsd:int" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="CustomerResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="customer" type="cus:customer" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:complexType name="customer">
+		<xsd:sequence>
+			<xsd:element name="customerId" type="xsd:int" />
+			<xsd:element name="customerName" type="xsd:string" />
+			<xsd:element name="accountId" type="xsd:long" />
+			<xsd:element name="customerAddress" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:element name="getAllCustomerRequest">
+        <xsd:complexType/>
+    </xsd:element>    
+    <xsd:element name="getAllCustomerResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="customerInfo" type="cus:customer" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
+

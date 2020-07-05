@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:get="http://www.customer.com/spring/soap/api/getcustomer">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <get:CustomerRequest>
+         <get:customerId>620014</get:customerId>
+      </get:CustomerRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
